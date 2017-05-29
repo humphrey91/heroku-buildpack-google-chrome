@@ -140,10 +140,10 @@ topic "Creating google-chrome shims"
 rm $SHIM
 cat <<EOF >$SHIM
 #!/usr/bin/env bash
+exec $BIN --headless --no-sandbox --disable-gpu \$@
 EOF
 chmod +x $SHIM
 cp $SHIM $BIN_DIR/google-chrome
-
 
 # export the chrome binary location, so it's easier to tell chromedriver
 # about the non-standard location
