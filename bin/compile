@@ -140,7 +140,7 @@ topic "Creating google-chrome shims"
 rm $SHIM
 cat <<EOF >$SHIM
 #!/usr/bin/env bash
-exec $BIN --headless --no-sandbox --disable-gpu \$@
+exec $BIN --headless --user-agent='Mozilla/5.0 (Linux; Android 5.1.1; SM-G928X Build/LMY47X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.83 Mobile Safari/537.36' --disable-gpu \$@
 EOF
 chmod +x $SHIM
 cp $SHIM $BIN_DIR/google-chrome
